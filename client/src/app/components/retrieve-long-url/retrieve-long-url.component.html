@@ -1,0 +1,23 @@
+<div class="w-full max-w-md bg-gray-800 rounded-lg p-6">
+
+    <h2 class="text-xl font-semibold mb-4">Get Your Long Url</h2>
+
+    <input 
+        type="text" 
+        placeholder="Enter short Url Id" 
+        [(ngModel)]="shortUrl"
+        (ngModelChange)="setShortUrl($event)"
+        class="w-full p-2 mb-4 text-gray-200 bg-gray-700 rounded-lg"
+    />
+
+    <button 
+        type="button" (click)="handleRetrieveLongUrl()" class="w-full mt-4 bg-red-600 rounded-lg hover:bg-blue-700 text-white py-2">
+        Retrieve Long Url
+    </button>
+
+    @if (retrievedLongUrl) {
+        <p class="mt-4 text-green-400">
+            Short Url : <a [href]="'/'+ retrievedLongUrl" target="_blank">{{ retrievedLongUrl }}</a>
+        </p>
+    }
+</div>

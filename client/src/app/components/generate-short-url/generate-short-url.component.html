@@ -1,0 +1,25 @@
+<div class="w-full max-w-md bg-gray-800 rounded-lg p-6 mb-6">
+    
+    <h2 class="text-xl font-semibold mb-4">
+        Generate Short URL
+    </h2>
+
+    <input 
+        type="text" 
+        placeholder="Enter long url" 
+        [(ngModel)]="longUrl"
+        (ngModelChange)="setLongUrl($event)"
+        class="w-full p-2 mb-4 text-gray-200 bg-gray-700 rounded-lg"
+    />
+
+    <button 
+        type="button" (click)="handleGenerateShortUrl()" class="w-full mt-4 bg-blue-600 rounded-lg hover:bg-blue-700 text-white py-2">
+        Generate Short Url
+    </button>
+
+    @if (generatedShortUrl) {
+        <p class="mt-4 text-green-400">
+            Short Url : <a [href]="'/'+ generatedShortUrl" target="_blank">{{ generatedShortUrl }}</a>
+        </p>
+    }
+</div>
