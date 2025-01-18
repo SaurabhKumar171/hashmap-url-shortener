@@ -83,9 +83,10 @@ export const getOriginalUrl = async(req, res) => {
 }
 
 // redirect to original url
-export const redirectToLongUrl = async(req, res) => {
-    try {
-        const { shortUrlId } = req.params;
+export const redirectToLongUrl = async(req, res) => {   
+    try {        
+        const fullUrl = req.originalUrl;
+        const shortUrlId = fullUrl.split("/").pop();
 
         // Validate the short URL ID
         if(!shortUrlId){
@@ -96,7 +97,9 @@ export const redirectToLongUrl = async(req, res) => {
         }
 
         const originalUrl = await redisClient.hGet("urls", shortUrlId);
-
+        
+        console.log("originalUrl - ", originalUrl);
+        
         // Check if the short URL ID exists
         if (!originalUrl) {
             return res.status(404).json({
