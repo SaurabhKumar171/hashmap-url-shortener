@@ -1,29 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-not-found',
-  standalone: true,
-  imports: [],
   templateUrl: './not-found.component.html',
-  styleUrl: './not-found.component.css'
+  styleUrls: ['./not-found.component.css']
 })
-export class NotFoundComponent implements OnInit{
+export class NotFoundComponent implements OnInit {
+
   countdown: number = 5;
 
-  constructor(private router: Router) {}
+  constructor() {}
 
   ngOnInit(): void {
+    this.startCountdown(() => {
+      window.location.href = '/';
+    });
+  }
+
+  redirectToCreatePage(): void {
+    window.location.href = '/';
+  }  
+
+  private startCountdown(callback: () => void): void {
     const interval = setInterval(() => {
       this.countdown--;
       if (this.countdown === 0) {
         clearInterval(interval);
-        this.redirectToCreatePage();
+        callback();
       }
-    }, 1000);
-  }
-
-  redirectToCreatePage(): void {
-    this.router.navigate(['/create']);
+    }, 1000); // Decrease countdown every second
   }
 }
