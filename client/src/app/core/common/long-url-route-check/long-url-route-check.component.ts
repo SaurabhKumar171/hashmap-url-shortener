@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RetrieveUrlService } from '../../../services/retrieve-url/retrieve-url.service';
 import { RetrieveUrlResponse } from '../../../interfaces/url-retrieve/retrieve-url-response.interface';
-import { GenerateShortUrlComponent } from "../../components/generate-short-url/generate-short-url.component";
+import { GenerateShortUrlComponent } from '../../components/HomePage/generate-short-url/generate-short-url.component';
 import { LoaderComponent } from "../loader/loader.component";
 
 @Component({

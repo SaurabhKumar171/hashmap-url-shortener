@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import { UrlShorteningService } from '../../../services/url-shortening/url-shortening.service';
-import { ShortenUrlResponse } from '../../../interfaces/url-shortening/shorten-url-response.interface';
+import { UrlShorteningService } from '../../../../services/url-shortening/url-shortening.service';
+import { ShortenUrlResponse } from '../../../../interfaces/url-shortening/shorten-url-response.interface';
 
 @Component({
   selector: 'app-generate-short-url',

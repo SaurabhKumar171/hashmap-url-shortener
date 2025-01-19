@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './core/components/home/home.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
 import { NotFoundComponent } from './core/common/not-found/not-found.component';
 import { LongUrlRouteCheckComponent } from './core/common/long-url-route-check/long-url-route-check.component';
 
 export const routes: Routes = [
     // Home route
-    { path: '', component: HomeComponent },
+    { path: '', component: HomePageComponent },
 
     // Not Found route for specific short URL handling
     { path: '404', component: NotFoundComponent },

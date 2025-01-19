@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RetrieveUrlService } from '../../../services/retrieve-url/retrieve-url.service';
-import { RetrieveUrlResponse } from '../../../interfaces/url-retrieve/retrieve-url-response.interface';
+import { RetrieveUrlService } from '../../../../services/retrieve-url/retrieve-url.service';
+import { RetrieveUrlResponse } from '../../../../interfaces/url-retrieve/retrieve-url-response.interface';
 
 @Component({
   selector: 'app-retrieve-long-url',
